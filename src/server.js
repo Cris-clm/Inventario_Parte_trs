@@ -9,12 +9,15 @@ const jsonParser = bodyParser.json()
 // create application/x-www-form-urlencoded parser
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-const chat= []
+let chat= []
 
 app.use('/', express.static(__dirname + '/public'))
 app.post('/agregarChat',(req, res)=>{
   let body=req.body
+  console.log(body)
+  console.log(body);
   chat.push(body)
+  
   res.json({mensaje:'se inserto chat correctamente'})
 })
 
