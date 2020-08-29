@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+ul {
+    display: flex;
+    justify-content: center;
+}
+li {
+    margin: 5px;
+    padding: 2px;
+    text-decoration: none;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+a:hover {
+    text-decoration: underline;
+    color: white;
+    background: tomato;
+    font-weight: 500;
+    padding: 10px;
+}
+
+.container {
+    width: 80%;
+    margin:auto;
+}
+
+.conteinerTable {
+    margin:auto;
+    width: 50%;
+}
+

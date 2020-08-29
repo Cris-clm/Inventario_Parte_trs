@@ -1,13 +1,27 @@
-var express = require('express')
-var bodyParser = require('body-parser')
+const express = require('express')
+const bodyParser = require('body-parser')
  
-var app = express()
+const app = express()
  
 // create application/json parser
-var jsonParser = bodyParser.json()
+const jsonParser = bodyParser.json()
  
 // create application/x-www-form-urlencoded parser
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+const urlencodedParser = bodyParser.urlencoded({ extended: false })
+
+const chat= []
+
+app.use('/', express.static(__dirname + '/public'))
+app.post('/agregarChat',(req, res)=>{
+  let body=req.body
+  chat.push(body)
+  res.json({mensaje:'se inserto chat correctamente'})
+})
+
+app.get('/listarDatos',(req, res)=>{
+  res.json({datos:chat})
+})
+
 
 app.get('/', (req, res)=>{
 res.json( {mensaje:'Bienvenido a tu servidor'} )
